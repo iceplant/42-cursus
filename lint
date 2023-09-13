@@ -1,0 +1,11 @@
+#!/bin/bash
+
+backup=backup-$1
+temp=formatter_temp_file.c
+
+# #1 = filename
+touch $temp $backup
+cp $1 $backup
+python3 -m c_formatter_42 < $1 > $temp
+mv $temp $1
+
