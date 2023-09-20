@@ -6,13 +6,13 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:46:13 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/14 17:13:51 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:15:28 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include <stddef.h>
+# include <stddef.h>
 
 #endif
