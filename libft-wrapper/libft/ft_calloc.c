@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:12:37 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/20 17:24:42 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:17:26 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*rtn;
 	size_t	i;
 
-	printf("\n\ncount: %zu\n", count);
-	printf("size: %zu\n", size);
 	rtn = malloc(count * size);
 	if (!rtn)
 		return (NULL);

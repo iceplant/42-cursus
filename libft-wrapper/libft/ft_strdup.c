@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 11:46:13 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/20 15:15:28 by rokamen-         ###   ########.fr       */
+/*   Created: 2023/09/21 14:17:38 by rokamen-          #+#    #+#             */
+/*   Updated: 2023/09/21 14:22:43 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stddef.h>
+size_t  ft_strlen(const char *s);
 
-#endif
+char	*ft_strdup(const char *s1)
+{
+	int	len;
+	char *rtn;
+	int	i;
+
+	len = ft_strlen(s1);
+	rtn = malloc(len + 1);
+	if (!rtn)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		rtn[i] = s1[i];
+		i++;
+	}
+	rtn[i] = '\0';
+	return (rtn);
+}
