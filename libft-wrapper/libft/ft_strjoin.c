@@ -6,25 +6,23 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:05:43 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/21 16:05:23 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/09/21 16:06:14 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlen(const char *s);
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	s1_len;
-	int	s2_len;
+	int		s1_len;
+	int		s2_len;
 	char	*rtn;
-	int	i;
-	
+	int		i;
+
 	if (!s1 && !s2)
 		return (0);
-
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	rtn = malloc((s1_len + s2_len + 1) * sizeof(char));
@@ -36,8 +34,8 @@ char *ft_strjoin(char const *s1, char const *s2)
 		if (i < s1_len)
 			rtn[i] = s1[i];
 		else
-		   rtn[i] = s2[i - s1_len];
-		i++;	
+			rtn[i] = s2[i - s1_len];
+		i++;
 	}
 	rtn[i] = '\0';
 	return (rtn);
