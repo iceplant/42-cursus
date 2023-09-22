@@ -13,7 +13,7 @@
 int	ft_isdigit(int c);
 
 int	ft_isalpha(int c);
-	
+
 int	ft_isalnum(int c)
 {
 	return (ft_isdigit(c) || ft_isalpha(c));

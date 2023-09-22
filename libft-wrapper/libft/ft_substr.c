@@ -15,11 +15,11 @@
 
 size_t	ft_strlen(const char *s);
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
 	unsigned int	j;
-	char *rtn;
+	char			*rtn;
 
 	if (!s)
 		return (NULL);
