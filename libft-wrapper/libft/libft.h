@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:46:13 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/25 19:41:55 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/09/25 19:49:45 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char *str, char c);
 int		ft_is_char_in_set(char c, char const *set);
 char	*ft_itoa(int n);
+int		ft_atoi(const char *str);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

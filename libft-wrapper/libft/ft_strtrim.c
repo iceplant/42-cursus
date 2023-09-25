@@ -10,17 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		ft_strlen(char *str);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strdup(const char *s1);
+#include "libft.h"
 
 int	ft_is_char_in_set(char c, char const *set)
 {
 	int	i;
 
 	i = 0;
+	if (!set || !*set)
+		return (0);
 	while (set[i])
 	{
 		if (c == set[i])
@@ -36,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	start = 0;
-	if (!s1 || !*s1 || !set || !*set)
+	if (!s1 || !*s1)
 		return (ft_strdup(""));
 	while (s1[start] && ft_is_char_in_set(s1[start], set))
 		start++;
