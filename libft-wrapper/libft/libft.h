@@ -44,5 +44,6 @@ char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
