@@ -6,7 +6,7 @@
 /*   By: rokamen- <rokamen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:01:03 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/27 14:58:35 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/09/27 15:01:27 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	**free_ptr_arr(char **ptr)
 	if (!ptr)
 		return (NULL);
 	i = 0;
-	while (!ptr[i])
+	while (ptr[i])
 	{
 		free(ptr[i]);
 		i++;
@@ -77,7 +77,6 @@ int	get_num_words(char *str, char c)
 	return (rtn);
 }
 
-//sizeof(char *) = 8
 char	**ft_split(char *str, char c)
 {
 	int		istr;
