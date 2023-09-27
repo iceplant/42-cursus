@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
+/*   By: rokamen- <rokamen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:01:03 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/22 17:01:17 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/09/27 14:54:57 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s);
-
+/*
 int	ft_is_separator(char c, char *charset)
 {
+	int	i;
 	int	i;
 
 	i = 0;
@@ -28,18 +28,14 @@ int	ft_is_separator(char c, char *charset)
 		i++;
 	}
 	return (0);
-}
-
+} */
+// get correct number of words
 // str must be a pointer to start of word
 int	ft_get_word_len(char *str, char c)
 {
-	int	i;
-
 	i = 0;
-	while (!(str[i] == c))
-	{
+	while (str[i] && !(str[i] == c))
 		i++;
-	}
 	return (i);
 }
 
@@ -66,6 +62,38 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
+char	**free_ptr_arr(char **ptr)
+{
+	int	i;
+
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (!ptr[i])
+	{
+		free(ptr[i]);
+		i++;
+	}
+	free(ptr);
+	return (NULL);
+}
+
+int	get_num_words(char *str, char c)
+{
+	int	i;
+	int	rtn;
+
+	i = 0;
+	rtn = 0;
+	while (str[i])
+	{
+		if (str[i] != c && (i == 0 || str[i - 1] == c))
+			rtn++;
+		i++;
+	}
+	return (rtn);
+}
+
 //sizeof(char *) = 8
 char	**ft_split(char *str, char c)
 {
@@ -75,22 +103,23 @@ char	**ft_split(char *str, char c)
 
 	istr = 0;
 	irtn = 0;
-	rtn = malloc(sizeof(char *) * (ft_strlen(str) + 1));
+	rtn = malloc(sizeof(char *) * (get_num_words(str, c) + 1));
 	if (!rtn || !str)
 		return (NULL);
 	while (str[istr])
 	{
 		if (!(str[istr] == c) && (istr == 0 || (str[istr - 1] == c)))
 		{
-			rtn[irtn] = malloc(8 * (ft_get_word_len(str + istr, c) + 1));
+			rtn[irtn] = malloc(sizeof(char) * (ft_get_word_len(str + istr, c)
+						+ 1));
 			if (!rtn[irtn])
-				return (NULL);
-			ft_strncpy(rtn[irtn], str + istr, (unsigned)ft_get_word_len(str
-					+ istr, c));
+				return (free_ptr_arr(rtn));
+			ft_strncpy(rtn[irtn], str + istr,
+				(unsigned)ft_get_word_len(str + istr, c));
 			irtn++;
 		}
 		istr++;
 	}
-	rtn[irtn] = 0;
+	rtn[irtn] = NULL;
 	return (rtn);
 }

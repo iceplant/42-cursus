@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+         #
+#    By: rokamen- <rokamen-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/13 11:15:06 by rokamen-          #+#    #+#              #
-#    Updated: 2023/09/20 15:50:17 by rokamen-         ###   ########.fr        #
+#    Updated: 2023/09/27 14:42:49 by rokamen-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,17 +17,16 @@ CFLAGS += -Wall -Wextra -Werror
 INC_DIR = includes
 CUR_DIR = $(shell pwd)
 
-DEPS = $(INC_DIR)/libft.h
+DEPS = ./libft.h
 
 ${NAME}: ${OBJECTS}
-	# cc -c ${CFLAGS} -o ${NAME} ${OBJECTS}
-	ar rc libft.a ${OBJECTS}
+	ar rcs libft.a ${OBJECTS}
 	ranlib ${NAME}
 
 all: ${NAME}
 
-%.o: %.c ${DEPS}
-	cc ${CFLAGS} libft.h -c $< -o $@ #-I ${INC_DIR}
+%.o: %.c Makefile ${DEPS} libft.h
+	cc ${CFLAGS} -c $< -o $@
 
 clean:
 	rm -f ${OBJECTS}
@@ -35,6 +34,6 @@ clean:
 fclean: clean
 	rm -f ${NAME}
 
-#.PHONY: all clean fclean
+.PHONY: all clean fclean re
 
 re: fclean all
