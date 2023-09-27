@@ -6,13 +6,13 @@
 /*   By: rokamen- <rokamen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 15:46:16 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/27 15:50:09 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/09/27 16:32:35 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst)
 	{
