@@ -6,33 +6,16 @@
 /*   By: rokamen- <rokamen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 17:01:03 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/27 14:54:57 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/09/27 14:58:35 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-int	ft_is_separator(char c, char *charset)
-{
-	int	i;
-	int	i;
-
-	i = 0;
-	if (c == '\0')
-		return (1);
-	while (charset[i] != '\0')
-	{
-		if (charset[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-} */
-// get correct number of words
-// str must be a pointer to start of word
 int	ft_get_word_len(char *str, char c)
 {
+	int	i;
+
 	i = 0;
 	while (str[i] && !(str[i] == c))
 		i++;
