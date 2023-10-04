@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
+/*   By: rokamen- <rokamen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:12:37 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/21 14:17:26 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/10/04 18:33:41 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-
-#include <stdio.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {

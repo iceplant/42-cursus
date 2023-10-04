@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rokamen- <rokamen-@student.42barcel>       +#+  +:+       +#+        */
+/*   By: rokamen- <rokamen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:19:20 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/09/22 19:47:20 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/10/04 18:34:18 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char			*ft_strdup(const char *s1);
 
 static size_t	int_len(int n)
 {
