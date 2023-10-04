@@ -6,17 +6,16 @@
 /*   By: rokamen- <rokamen-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:36:59 by rokamen-          #+#    #+#             */
-/*   Updated: 2023/10/04 18:36:42 by rokamen-         ###   ########.fr       */
+/*   Updated: 2023/10/04 20:55:43 by rokamen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, void *src, size_t n)
+void	*ft_memmove(void *dest, void *src, size_t len)
 {
 	char	*csrc;
 	char	*cdest;
-	char	*temp;
 	size_t	i;
 
 	if (!dest && !src)
@@ -25,16 +24,19 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 		return (dest);
 	csrc = (char *)src;
 	cdest = (char *)dest;
-	temp = (char *)malloc(n * sizeof(char));
 	i = 0;
-	while (i < n)
+	if (dest < src)
 	{
-		if (cdest > csrc)
-			cdest[n - i - 1] = csrc[n - i - 1];
-		else
-			cdest[i] = csrc[i];
-		i++;
+		while (i < len)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
 	}
-	free(temp);
+	else if (src < dest)
+	{
+		while (len--)
+			((unsigned char *)dest)[len] = ((unsigned char *)src)[len];
+	}
 	return (dest);
 }
