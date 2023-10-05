@@ -6,7 +6,7 @@
 #    By: rokamen- <rokamen-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/13 11:15:06 by rokamen-          #+#    #+#              #
-#    Updated: 2023/09/27 16:48:32 by rokamen-         ###   ########.fr        #
+#    Updated: 2023/10/05 19:49:09 by rokamen-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,11 +47,11 @@ bonus:	$(OBJECTS) $(BONUS_OBJECTS) $(HEADER)
 	ranlib ${NAME}
 
 clean:
-	rm -f ${OBJECTS}
+	rm -f ${OBJECTS} ${BONUS_OBJECTS}
 
 fclean: clean
 	rm -f ${NAME}
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 
 re: fclean all
